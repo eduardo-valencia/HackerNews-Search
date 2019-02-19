@@ -1,0 +1,21 @@
+@import 'breakpoints';
+
+@media (min-width: $bk-md) {
+  .w-25-m {
+    width: 25%;
+  }
+}
+
+@media (max-width: $bk-sm) {
+  .w-75-max-m {
+    width: 75%;
+  }
+}
+
+.w-r-md {
+  width: 100%;
+
+  @media (min-width: $bk-md) {
+    width: 50%;
+  }
+}
