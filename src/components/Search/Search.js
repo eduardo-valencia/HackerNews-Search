@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SearchBtn from './SearchBtn'
 import makeSearchRequest from './searchRequest'
 
 let typeWriterTimeout
@@ -62,15 +61,6 @@ export class Search extends Component {
 
   render() {
     const { placeholder } = this.state
-    const size = '5em'
-    const searchBarStyles = {
-      height: size,
-      borderRadius: size,
-      border: 'none',
-      backgroundColor: '#E5E5E5',
-      outline: 'none',
-      padding: '0.5em 1em 0.5em 4em'
-    }
 
     return (
       <>
@@ -78,16 +68,22 @@ export class Search extends Component {
           className="form-inline mt-4 mx-auto d-block"
           onSubmit={event => this.handleSubmission(event)}
         >
-          <input
-            className="d-block mx-auto w-r-md"
-            type="search"
-            placeholder={placeholder}
-            aria-label="Search"
-            style={searchBarStyles}
-            id="search-bar"
-            onChange={this.handleInputChange}
-          />
-          <SearchBtn />
+          <div id="search-bar" className="w-100 mt-4 shadow rounded px-3">
+            <img
+              src="https://img.icons8.com/ios/50/000000/search.png"
+              alt="search icon"
+              id="search-btn"
+              className="d-inline-block mr-4"
+            />
+            <input
+              type="text"
+              name="searchQuery"
+              className="d-inline-block"
+              id="query"
+              placeholder={placeholder}
+              onChange={this.handleInputChange}
+            />
+          </div>
         </form>
       </>
     )
