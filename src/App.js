@@ -4,6 +4,7 @@ import './sass/main.scss'
 import Search from './components/Search/Search'
 import Filters from './components/Filters'
 import SearchResults from './components/SearchResults/SearchResults'
+import Footer from './components/Footer'
 
 class App extends Component {
   state = {
@@ -34,14 +35,12 @@ class App extends Component {
     }))
   }
 
-  fixPageHeight
-
   render() {
     const { results, filters, loading } = this.state
     return (
       <>
         <div className="container py-5 py-3" id="main">
-          <h1>Search Hackerrank...</h1>
+          <h1 className="text-center">Search Hackerrank...</h1>
           <Search
             addToAppState={this.addSearchResults}
             filters={filters}
@@ -50,14 +49,7 @@ class App extends Component {
           <Filters filters={filters} setFilters={this.setFilters} />
           <SearchResults searchResults={results} loading={loading} />
         </div>
-        <footer className="container mt-5 text-center">
-          <a
-            href="https://icons8.com/icon/132/search"
-            className="text-secondary"
-          >
-            Search icon by Icons8
-          </a>
-        </footer>
+        <Footer />
       </>
     )
   }

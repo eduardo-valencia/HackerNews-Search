@@ -60,7 +60,7 @@ export class Search extends Component {
   }
 
   render() {
-    const { placeholder } = this.state
+    const { placeholder, currentQuery } = this.state
 
     return (
       <>
@@ -85,6 +85,11 @@ export class Search extends Component {
             />
           </div>
         </form>
+        {currentQuery ? (
+          <p className="text-uppercase text-primary text-center mt-3">
+            Press Enter or Return to search.
+          </p>
+        ) : null}
       </>
     )
   }

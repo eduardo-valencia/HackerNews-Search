@@ -15,10 +15,6 @@ export class Filters extends Component {
       {
         id: 'poll',
         name: 'Poll'
-      },
-      {
-        id: 'front_page',
-        name: 'Front Page'
       }
     ]
 
@@ -39,9 +35,10 @@ export class Filters extends Component {
 
   render() {
     return (
-      <div id="filters-container">
+      <div id="filters-container" className="mt-4">
+        <p className="mb-1 d-block text-secondary text-center">Filters:</p>
         <div
-          className="btn-group mt-3 mx-auto"
+          className="btn-group mx-auto"
           role="group"
           aria-label="Search Filters"
           id="filters"
