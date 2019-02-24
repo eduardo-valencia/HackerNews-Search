@@ -18,10 +18,13 @@ export class Filter extends Component {
   }
 
   render() {
-    const btnColor = this.isActive() ? 'btn-primary' : 'btn-secondary'
+    const btnColor = this.isActive() ? 'filter-active' : 'btn-custom-secondary'
     const { name } = this.props
     return (
-      <button className={`btn ${btnColor}`} onClick={this.toggleFilter}>
+      <button
+        className={`text-white py-2 btn ${btnColor}`}
+        onClick={this.toggleFilter}
+      >
         {name}
       </button>
     )

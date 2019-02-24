@@ -20,7 +20,7 @@ export class Search extends Component {
   }
 
   initiateTypewriter = () => {
-    const placeholderMsg = 'Start typing...'
+    const placeholderMsg = 'Search...'
     let placeholderIndex = 0
 
     typeWriterTimeout = setInterval(() => {
@@ -68,7 +68,7 @@ export class Search extends Component {
           className="form-inline mt-4 mx-auto d-block"
           onSubmit={event => this.handleSubmission(event)}
         >
-          <div id="search-bar" className="w-100 mt-4 shadow rounded px-3">
+          <div id="search-bar" className="w-100 mt-4 shadow-lg">
             <img
               src="https://img.icons8.com/ios/50/000000/search.png"
               alt="search icon"
@@ -86,7 +86,7 @@ export class Search extends Component {
           </div>
         </form>
         {currentQuery ? (
-          <p className="text-uppercase text-primary text-center mt-3">
+          <p className="text-custom-primary-shade mt-3">
             Press Enter or Return to search.
           </p>
         ) : null}

@@ -1,0 +1,41 @@
+$sizes: (huge: 3em,
+big: 1.75em,
+normal: 1.15em,
+small: 0.75em,
+);
+
+.pageTitle {
+    font-size: map-get($sizes, huge);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $font-weight__semi_bold;
+
+    &-standout {
+        color: $color-secondary;
+    }
+}
+
+.pageSubTitle {
+    font-size: map-get($sizes, big);
+    color: $color-tertiary-shade;
+}
+
+.resultTitle {
+    font-size: map-get($sizes, big);
+    color: $color-tertiary;
+    font-weight: $font-weight--bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.resultInfo {
+    font-size: map-get($sizes, small);
+    color: $color-secondary;
+}
+
+.resultText {
+    color: white;
+    font-size: map-get($map: $sizes, $key: normal);
+}
+
+.result-container a {
+    color: $color-secondary;
+}

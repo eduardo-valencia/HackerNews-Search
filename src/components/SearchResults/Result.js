@@ -1,27 +1,41 @@
 import React, { Component } from 'react'
 
 export class Comment extends Component {
-  render() {
-    const {
-      title,
-      url,
-      text,
-      author,
-      secondaryInfo,
-      componentDisplayName
-    } = this.props
-
+  getResultBody = () => {
+    const { title, author, secondaryInfo, text } = this.props
     return (
-      <div className="my-4 px-3 py-4 text-center article">
-        <h1 className="display-4">{title}</h1>
+      <>
+        <h1 className="display-4 resultTitle mb-4">{title}</h1>
         {author ? (
-          <h6 className="text-muted text-uppercase">{author}</h6>
+          <h6 className="resultInfo text-uppercase">{author}</h6>
         ) : null}
         {secondaryInfo ? (
-          <p className="text-muted text-uppercase">{secondaryInfo}</p>
+          <p className="resultInfo text-uppercase">{secondaryInfo}</p>
         ) : null}
-        {text ? <p>{text}</p> : null}
-        {url ? <a href={url}>View {componentDisplayName}</a> : null}
+        {text ? <p className="resultText">{text}</p> : null}
+      </>
+    )
+  }
+
+  getResultFooter = () => {
+    const { url, componentDisplayName } = this.props
+    return url ? (
+      <a
+        href={url}
+        className="btn btn-custom-secondary text-white py-3 d-block w-25 mx-auto"
+      >
+        View {componentDisplayName}
+      </a>
+    ) : null
+  }
+
+  render() {
+    return (
+      <div className="my-5 result-container rounded shadow">
+        <div className="px-4 py-4">{this.getResultBody()}</div>
+        <div className="result-container-footer py-3">
+          {this.getResultFooter()}
+        </div>
       </div>
     )
   }

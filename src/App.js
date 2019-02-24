@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './sass/main.scss'
+import './sass/other/main.scss'
 
 import Search from './components/Search/Search'
-import Filters from './components/Filters'
+import Filters from './components/Filters/Filters'
 import SearchResults from './components/SearchResults/SearchResults'
-import Footer from './components/Footer'
+import Footer from './components/Other/Footer'
 
 class App extends Component {
   state = {
@@ -40,7 +40,15 @@ class App extends Component {
     return (
       <>
         <div className="container py-5 py-3" id="main">
-          <h1 className="text-center">Search Hackerrank...</h1>
+          <div className="mb-5 py-5">
+            <div>
+              <h1 className="pageTitle d-inline">Hackerrank News </h1>
+              <h1 className="pageTitle pageTitle-standout d-inline">Search</h1>
+            </div>
+            <h2 className="pageSubTitle">
+              Quickly search through the news stories, comments, and polls.
+            </h2>
+          </div>
           <Search
             addToAppState={this.addSearchResults}
             filters={filters}

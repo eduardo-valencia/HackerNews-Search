@@ -1,0 +1,31 @@
+// Font Stack
+$font-url--montserrat: 'https://fonts.googleapis.com/css?family=Montserrat:600';
+$font-url--lato: 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+//Font Weights
+$font-weight--normal: 400;
+$font-weight--semi_bold: 600;
+$font-weight--bold: 700;
+
+// Human-Friendly Color Names
+$venomGreen: #04B328;
+$lime: #00EA31;
+$grey: #919191;
+$light-gray: #BDBDBD;
+$near-white: #FBFAF7;
+$dusty-white: #F2F2F2;
+$slate-blue: #738290;
+$enhanced-slate-gray: #626E79;
+$near-black: #4F4F4F;
+
+// Color Usage
+$color-primary: black;
+$color-secondary: $lime;
+$color-tertiary: white;
+$color-complementary: $slate-blue;
+$background: #FBFAF7;
+
+$color-primary-shade: $grey;
+$color-secondary-shade: $venomGreen;
+$color-tertiary-shade: $light-gray;
+$color-complementary-shade: $enhanced-slate-gray;

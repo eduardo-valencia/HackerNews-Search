@@ -1,0 +1,27 @@
+#filters {
+  flex: 30%;
+  width: 100%;
+}
+
+.filter-label {
+  color: $grey;
+}
+
+.filter-active,
+.filter-active:hover {
+  background-color: $color-secondary-shade;
+  text-decoration: underline;
+}
+
+.filter {
+  background-color: $color-secondary;
+  color: $color-tertiary;
+}
+
+@media (min-width: $bk-md) {
+  #filters-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

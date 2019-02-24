@@ -38,7 +38,7 @@ export class Filters extends Component {
       <div id="filters-container" className="mt-4">
         <p className="mb-1 d-block text-secondary text-center">Filters:</p>
         <div
-          className="btn-group mx-auto"
+          className="btn-group mx-auto shadow"
           role="group"
           aria-label="Search Filters"
           id="filters"
