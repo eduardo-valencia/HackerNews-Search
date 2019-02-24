@@ -4,28 +4,30 @@ import Result from './Result'
 const Parser = require('html-to-react').Parser
 
 export class SearchResults extends Component {
-  makeComment = result => {
+  makeComment = (result, index) => {
     const { author, comment_text, story_title, story_url } = result
     const htmlToReactParser = new Parser()
     const textAsReact = htmlToReactParser.parse(comment_text)
     const secondaryText = `${author} says:`
+
     return (
       <Result
-        secondaryText={secondaryText}
+        secondaryInfo={secondaryText}
         text={textAsReact}
         title={story_title}
         url={story_url}
         componentDisplayName="Comment"
+        key={index}
       />
     )
   }
 
-  makePoll = result => {
+  makePoll = (result, index) => {
     const { title, author } = result
-    return <Result author={author} title={title} />
+    return <Result author={author} title={title} key={index} />
   }
 
-  makeStory = result => {
+  makeStory = (result, index) => {
     const { title, author, url } = result
     return (
       <Result
@@ -33,11 +35,12 @@ export class SearchResults extends Component {
         author={author}
         url={url}
         componentDisplayName="Story"
+        key={index}
       />
     )
   }
 
-  makeArticleComponent = result => {
+  makeArticleComponent = (result, index) => {
     const typesToMethods = {
       comment: this.makeComment,
       story: this.makeStory,
@@ -46,13 +49,13 @@ export class SearchResults extends Component {
 
     const type = result._tags[0]
     if (!typesToMethods.hasOwnProperty(type)) return false
-    return typesToMethods[type](result)
+    return typesToMethods[type](result, index)
   }
 
   getSearchResults = () => {
     const { searchResults } = this.props
 
-    if (searchResults.length) {
+    if (searchResults && searchResults.length) {
       return searchResults.map(this.makeArticleComponent)
     }
   }
