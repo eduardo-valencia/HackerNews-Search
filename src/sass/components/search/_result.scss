@@ -1,8 +1,17 @@
 .result-container {
     background-color: $slate-blue;
     color: white;
+    overflow-x: scroll;
 
     &-footer {
         background-color: $enhanced-slate-gray;
+    }
+}
+
+.result__button {
+    width: 50%;
+
+    @media (min-width: $bk-md) {
+        width: 25%;
     }
 }

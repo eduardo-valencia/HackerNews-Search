@@ -7,7 +7,7 @@ export class ResultFooter extends Component {
       <div className="result-container-footer py-3">
         <a
           href={url}
-          className="btn btn-custom-secondary text-white py-3 d-block w-25 mx-auto"
+          className="btn btn-custom-secondary text-white py-3 d-block mx-auto result__button"
         >
           View {componentDisplayName}
         </a>
