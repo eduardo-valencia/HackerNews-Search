@@ -6,7 +6,7 @@ This is a practice project I build after being inspired by the article [6 Fun Re
 
 # Examples
 
-![](README/Github.gif)
+![](Github.gif)
 
 # Installation
 
